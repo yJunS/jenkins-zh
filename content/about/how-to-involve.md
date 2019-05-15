@@ -11,7 +11,7 @@ author: linuxsuren
 
 # Jenkins 本地化
 
-{{< exref "Jenkins 中文官网" "https://jenkins.io/zh/" >}}有很多的{{< exref "翻译任务" "https://issues.jenkins-ci.org/secure/RapidBoard.jspa?rapidView=536&view=detail" >}}需要各路英雄自由领取。无规矩不成方圆，在享受自由的同时，也请牢记如下几点：
+{{< exref "Jenkins 中文官网" "https://jenkins.io/zh/" >}}有很多的{{< exref "翻译任务" "https://github.com/orgs/jenkins-zh/projects/2" >}}需要各路英雄自由领取。无规矩不成方圆，在享受自由的同时，也请牢记如下几点：
 
 * 认真、负责第一位
 * 翻译任务通常不建议超过两周
@@ -27,7 +27,7 @@ Jenkins 的{{< exref "简体中文语言插件" "https://github.com/jenkinsci/lo
 
 # 分享
 
-你可以在本站或者 [Mettup]({{< ref "meetups.md" >}}) 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。
+你可以在本站或者 [Meetup]({{< ref "meetups.md" >}}) 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。
 
 # 维护本站点
 

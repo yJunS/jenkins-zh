@@ -1,33 +1,18 @@
 fetch-theme:
-	if [ ! -d "themes" ]; then \
-		mkdir themes; \
-	fi
-	if [ -d "themes/hugo-jenkins-theme" ]; then \
-	    cd themes/hugo-jenkins-theme && git fetch && git reset --hard origin/master && git pull; \
-	else \
-		cd themes && git clone https://github.com/jenkins-zh/hugo-jenkins-theme; \
-	fi
+	./scripts/fetch-theme.sh
 
 fetch-wechat-articles:
-	if [ -d "content/wechat" ]; then \
-	    rm -rf content/wechat; \
-	fi
-	cd content && git clone https://github.com/jenkins-infra/wechat
+	./scripts/fetch-wechat-articles.sh
 	make change-format
 
 change-format:
-	cd content/wechat/articles && rm sample.md && find . -name *.md -exec mv {} . \;
-	rm -rf content/wechat/articles/2018
-	rm -rf content/wechat/images/*.md
-	rm -rf content/wechat/management/
-	rm -rf content/wechat/*.md
-	cp -r content/wechat/images/ static/images/
+	./scripts/change-format.sh
 
 update:
 	if [ -d "jenkins-zh.github.io" ]; then \
 	    cd jenkins-zh.github.io && git pull; \
 	else \
-		git clone git@github.com:jenkins-zh/jenkins-zh.github.io.git; \
+		git clone https://github.com/jenkins-zh/jenkins-zh.github.io; \
 	fi
 	make fetch-theme
 	make fetch-wechat-articles
@@ -41,3 +26,4 @@ deploy:
 	hugo -F
 	cp -r public/* jenkins-zh.github.io
 	cd jenkins-zh.github.io && git add . && git commit -m 'deploy' && git push
+
